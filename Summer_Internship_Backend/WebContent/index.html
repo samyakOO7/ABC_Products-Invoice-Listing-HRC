@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css" />
+		<script src="jquery-3.3.1.min.js"></script>
+		<script src="script.js" async defer></script>
+		 <script src="index.js" async defer></script> 
+	</head>
+	<body>
+		<div class="container">
+			<div class="logo" style="display: flex; padding: 1%">
+				<h1><img src="assets/abc.svg" /></h1>
+				<h1 style="margin-left: 25%">
+					<img src="assets/logo@2x.png" width="200px" />
+				</h1>
+			</div>
+			<div class="content">
+				<button class="page-btn prev" onclick="prev()">&lt;</button>
+				<button class="page-btn next" onclick="next()">&gt;</button>
+				<div class="body-btn" style="padding: 5px; height: 40px">
+					<button href="modal 1" class="nav-btn add-btn">+ Add</button>
+					<button href="modal 2" class="nav-btn edit-btn">/ Edit</button>
+					<button href="modal 3" class="nav-btn delete-btn">- Delete</button>
+					<div
+						class="invoice"
+						style="
+							background: #283a46 0% 0% no-repeat padding-box;
+							border: 1px solid #356680;
+							border-radius: 10px;
+							opacity: 1;
+							color: #ffffff;
+							display: flex;
+							width: 25%;
+							padding: 5px;
+							justify-content: space-between;
+						"
+					>
+						<input
+							placeholder="Search by Invoice Number"
+							style="height: 90%; width: 90%; border: none"
+						/>
+						<img src="assets/search-24px (3).svg" width="20px" />
+					</div>
+				</div>
+
+				<div class="modal 1">
+					<div class="header">
+						<h2>Add Invoice</h2>
+						<button class="cross" style="background: transparent; border: none">
+							<img src="assets/cross.png" width="20px" height="20px" />
+						</button>
+					</div>
+					<div class="body1">
+						<div class="field">
+							<label>Customer name <span style="color: red">*</span></label>
+							<input type="text" style="float: right" />
+						</div>
+						<div class="field">
+							<label>Customer No. <span style="color: red">*</span></label>
+							<input type="text" style="float: right" />
+						</div>
+						<div class="field">
+							<label>Invoice No. <span style="color: red">*</span></label>
+							<input type="text" style="float: right" />
+						</div>
+						<div class="field">
+							<label>Invoice Amount <span style="color: red">*</span></label>
+							<input type="text" style="float: right" />
+						</div>
+					</div>
+					<div class="body2">
+						<div class="field">
+							<label>Due Date <span style="color: red">*</span></label>
+							<input
+								type="date"
+								value=""
+								style="float: right; min-width: 200px"
+							/>
+						</div>
+						<div class="field">
+							<label>Notes </label>
+							<textarea
+								class="textarea"
+								style="float: right; min-width: 200px"
+							></textarea>
+						</div>
+					</div>
+					<div class="buttons">
+						<button
+							class="subbtn cancel"
+							id="modal1-cancel"
+							type="submit"
+							value="Cancel"
+						>
+							Cancel
+						</button>
+						<div class="rbtn">
+							<button class="subbtn reset" type="submit" value="Clear">
+								Clear
+							</button>
+							<button class="subbtn add" type="submit" value="Add">Add</button>
+						</div>
+					</div>
+				</div>
+				<div class="modal 2" style="width: 30%">
+					<!-- <h1>Modal 2</h1> -->
+					<div class="header">
+						<h2>Edit Invoice</h2>
+						<button class="cross" style="background: transparent; border: none">
+							<img src="assets/cross.png" width="20px" height="20px" />
+						</button>
+					</div>
+					<div class="body1" style="grid-column: 1/-1">
+						<div class="field">
+							<label>Invoice Amount </label>
+							<input type="text" style="float: right; width: 65%" />
+						</div>
+						<div class="field">
+							<label>Notes </label>
+							<textarea
+								class="textarea"
+								style="float: right; width: 65%"
+							></textarea>
+						</div>
+					</div>
+					<div class="buttons">
+						<button
+							class="subbtn cancel"
+							id="modal1-cancel"
+							type="submit"
+							value="Cancel"
+						>
+							Cancel
+						</button>
+						<div class="rbtn" style="margin-right: 5%">
+							<button class="subbtn reset" type="submit" value="Reset">
+								Reset
+							</button>
+							<button class="subbtn edit" type="submit" value="Save">
+								Edit
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="modal 3" style="width: 50%">
+					<!-- <h1>Modal 3</h1> -->
+					<div class="header">
+						<h2>Delete Record(s)?</h2>
+						<button class="cross" style="background: transparent; border: none">
+							<img src="assets/cross.png" width="20px" height="20px" />
+						</button>
+					</div>
+					<div class="body1" style="grid-column: 1/-1">
+						<p>
+							You'll lose your record(s) after this action. We can't recover
+							them once you delete.
+						</p>
+						<p>
+							Are you sure you want to
+							<span style="color: #ff5e5e">permanently delete</span> them?
+						</p>
+					</div>
+					<div class="buttons">
+						<button class="subbtn cancel" id="modal1-cancel" type="submit">
+							Cancel
+						</button>
+						<button class="subbtn del" type="submit">Delete</button>
+					</div>
+				</div>
+
+				<div class="table1">
+					<table>
+						<thead>
+							<tr>
+								<th><input type="checkbox" name="" id="" /></th>
+								<th>Customer Name</th>
+								<th>Customer#</th>
+								<th>Invoice#</th>
+								<th>Invoice Amount</th>
+								<th>Due Date</th>
+								<th>Predicted Payment Date</th>
+								<th>Notes</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td id="table">January</td>
+								<td id="table">$100</td>
+							</tr>
+							<tr>
+								<td id="table">February</td>
+								<td id="table">$80</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
