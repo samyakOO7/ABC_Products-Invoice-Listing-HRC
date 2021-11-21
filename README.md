@@ -9,7 +9,7 @@ Than we prefer entering all those values in ML SQL DB and connecting it directly
 
 
 We also have an Add page, Edit Page, Search and Delete functionality for developer to perform crud operation on the data easily whenever required.
-![hrc invoice add](https://user-images.githubusercontent.com/53942554/142750845-5f549b0c-2080-4159-a397-042f87211239.png)
+![hrc invoice add1](https://user-images.githubusercontent.com/53942554/142751054-cc028d0f-0d00-45bc-b8cd-407dfdb132dd.png)
 ![hrc invoice edit](https://user-images.githubusercontent.com/53942554/142750837-0b94e1bd-fb1c-4143-9a9d-d86d6978b4c2.png)
 
 
